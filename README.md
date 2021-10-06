@@ -6,7 +6,7 @@
 
 ## 構想・仕様
 
-[https://docs.google.com/presentation/d/1hSTLTyyPiBpRvptdsnTRtwwtCgyKsXLaIswN0ozImcU/edit?usp=sharing](https://docs.google.com/presentation/d/1hSTLTyyPiBpRvptdsnTRtwwtCgyKsXLaIswN0ozImcU/edit?usp=sharing)
+[構想・仕様](https://docs.google.com/spreadsheets/d/15h1unG4SjT-1ir9hhCDKF6-pLmnYznfLanNYkxFzqLc)
 
 ## ライセンス
 
