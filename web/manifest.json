@@ -1,7 +1,7 @@
 {
     "name": "beat",
     "short_name": "beat",
-    "start_url": "./beat/",
+    "start_url": "https://t-cool.github.io/beat/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
