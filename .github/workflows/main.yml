@@ -14,7 +14,6 @@ jobs:
       with:
         flutter-version: '2.5.0'
     - run: flutter pub get
-    - run: flutter test
     - run: flutter build web    
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.8.0
