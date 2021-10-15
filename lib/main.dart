@@ -45,6 +45,8 @@ class MyStatelessWidget extends StatelessWidget {
           cells: <DataCell>[
             DataCell(Text('どこ')),
             DataCell(Text('いつ')),
+            DataCell(Text('')),
+            DataCell(Text('')),
           ],
         ),
       ],
