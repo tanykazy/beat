@@ -35,8 +35,8 @@ class MyStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DataTable(
       columns: const <DataColumn>[
-        DataColumn(label: Text('α')),
-        DataColumn(label: Text('だれが(なにが)')),
+        DataColumn(label: Text('玉手箱')),
+        DataColumn(label: Text('だれが')),
         DataColumn(label: Text('する(です)')),
         DataColumn(label: Text('だれ・なに')),
       ],
@@ -44,9 +44,7 @@ class MyStatelessWidget extends StatelessWidget {
         DataRow(
           cells: <DataCell>[
             DataCell(Text('どこ')),
-            DataCell(Text('どう')),
             DataCell(Text('いつ')),
-            DataCell(Text('なぜ')),
           ],
         ),
       ],
