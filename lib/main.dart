@@ -15,29 +15,25 @@ class TopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(initialRoute: '/hello', routes: {
+      '/hello': (context) => const Hello(),
+      '/beating': (context) => const Beating(),
+    });
+  }
+}
+
+class Hello extends StatelessWidget {
+  const Hello({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
-        routes: {
-          '/beating': (context) => const Beating(),
-        },
         title: 'Welcome to Flutter',
-        home: Builder(
-            builder: (context) => Scaffold(
-                appBar: AppBar(
-                  title: Text('Beat App'),
-                  centerTitle: true,
-                  actions: [
-                    IconButton(
-                        icon: const Icon(Icons.search), onPressed: () {}),
-                  ],
-                  elevation: 0,
-                ),
-                extendBodyBehindAppBar: true,
-                body: Center(
-                    child: ElevatedButton(
-                  child:
-                      const Text("学習開始", style: TextStyle(color: Colors.white)),
-                  onPressed: () => Navigator.pushNamed(context, "/beating"),
-                )))));
+        home: Center(
+            child: ElevatedButton(
+          child: const Text("学習開始", style: TextStyle(color: Colors.white)),
+          onPressed: () => Navigator.pushNamed(context, "/beating"),
+        )));
   }
 }
 
