@@ -46,23 +46,35 @@ class Beating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Material App
-    return DataTable(
-      columns: const <DataColumn>[
-        DataColumn(label: Text('玉手箱')),
-        DataColumn(label: Text('だれが')),
-        DataColumn(label: Text('する(です)')),
-        DataColumn(label: Text('だれ・なに')),
-      ],
-      rows: const <DataRow>[
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('どこ')),
-            DataCell(Text('いつ')),
-            DataCell(Text('')),
-            DataCell(Text('')),
-          ],
+    return MaterialApp(
+      title: 'Grid List',
+      home: Scaffold(
+/*        appBar: AppBar(
+          title: Text('Grid List'),
         ),
-      ],
+*/
+        body: GridView.count(
+          crossAxisCount: 4, // 1行に表示する数
+          crossAxisSpacing: 4.0, // 縦スペース
+          mainAxisSpacing: 4.0, // 横スペース
+          shrinkWrap: true,
+          children: List.generate(16, (index) {
+            return Container(
+                padding: const EdgeInsets.all(8.0),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                ),
+                child: GridTile(
+                    child: Icon(Icons.play_arrow),
+                    footer: Center(
+                      child: Text(
+                        'Meeage $index',
+                      ),
+                    )));
+          }),
+        ),
+      ),
     );
   }
 }
