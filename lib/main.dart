@@ -6,33 +6,46 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
           [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight])
-      .then((_) => {runApp(Beating())});
+      .then((_) => {runApp(const TopPage())});
 }
 
-// Beating: ビートを刻みながら音読する画面
+// トップページ
+class TopPage extends StatelessWidget {
+  const TopPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(initialRoute: '/hello', routes: {
+      '/hello': (context) => const Hello(),
+      '/beating': (context) => const Beating(),
+    });
+  }
+}
+
+class Hello extends StatelessWidget {
+  const Hello({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Welcome to Flutter',
+        home: Center(
+            // ボタン： TextButton(枠無), OutlinedButton(枠有), ElevatedButton(色有)
+            child: OutlinedButton.icon(
+          label: const Text('学習開始'),
+          icon: const Icon(Icons.play_arrow),
+          onPressed: () => Navigator.pushNamed(context, "/beating"),
+        )));
+  }
+}
+
+// 音読画面
 class Beating extends StatelessWidget {
   const Beating({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Material App
-    return MaterialApp(
-      // Scaffold Widget
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Beat'),
-        ),
-        body: Center(child: MyStatelessWidget()),
-      ),
-    );
-  }
-}
-
-class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
     return DataTable(
       columns: const <DataColumn>[
         DataColumn(label: Text('玉手箱')),
