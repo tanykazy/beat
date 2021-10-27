@@ -30,8 +30,10 @@ class Hello extends StatelessWidget {
     return MaterialApp(
         title: 'Welcome to Flutter',
         home: Center(
-            child: ElevatedButton(
-          child: const Text("学習開始", style: TextStyle(color: Colors.white)),
+            // ボタン： TextButton(枠無), OutlinedButton(枠有), ElevatedButton(色有)
+            child: OutlinedButton.icon(
+          label: const Text('学習開始'),
+          icon: const Icon(Icons.play_arrow),
           onPressed: () => Navigator.pushNamed(context, "/beating"),
         )));
   }
